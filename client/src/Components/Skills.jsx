@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import SkillCard from "./Skillcard";
 import { SkillModal } from "./AdminModals";
-import { getIcon } from "./skillIcons";
+   import { getIcon } from "./iconList";
 import { useAdmin } from "../AdminContext";
 import api from "../api";
 

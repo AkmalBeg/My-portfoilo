@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import api, { fileUrl } from '../api'
-import { iconOptions } from './Skillicons.js'
+   import { iconOptions } from './iconList'
 
 const field = 'w-full p-2.5 bg-transparent border border-slate-700 rounded-lg outline-none focus:border-[#A6FF5D] text-white'
 const primary = 'px-5 py-2 rounded-full bg-[#A6FF5D] text-gray-800 font-medium text-sm disabled:opacity-60'
