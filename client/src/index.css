@@ -1,0 +1,19 @@
+
+@import "tailwindcss";
+
+html{
+    scroll-behavior: smooth;
+}
+
+@theme {
+  --animate-gradient-border: gradient-border 3s ease infinite;
+}
+
+@keyframes gradient-border {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
