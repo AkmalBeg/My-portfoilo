@@ -13,6 +13,18 @@ const app = express();
 
 app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
 app.use(express.json({ limit: "1mb" }));
+
+// Connect to MongoDB on every request (Vercel has no always-running server).
+// connectdb() returns right away when the connection already exists.
+app.use(async (req, res, next) => {
+  try {
+    await connectdb();
+    next();
+  } catch (err) {
+    res.status(500).json({ message: "Database connection failed" });
+  }
+});
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.get("/", (req, res) => res.json({ message: "Portfolio API running" }));
@@ -30,6 +42,11 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message: status === 500 ? "Server error" : err.message });
 });
 
-const PORT = process.env.PORT || 5000;
-await connectdb();
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+// Locally: start the server. On Vercel: just export the app.
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  await connectdb();
+  app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+}
+
+export default app;
