@@ -16,7 +16,7 @@ const scrollToSection = (id) => (e) => {
 
 const downloadResume = () => {
   const link = document.createElement("a");
-  link.href = "/JohnDoe.pdf";
+  link.href = "/Akmal_Beg_Resume (7).pdf";
   link.download = "Akmal_Beg_Resume.pdf";
   document.body.appendChild(link);
   link.click();
