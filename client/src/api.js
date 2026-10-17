@@ -25,7 +25,7 @@ api.interceptors.response.use(
 // "/uploads/pic.jpg" -> "http://localhost:5000/uploads/pic.jpg"
 export const fileUrl = (path) => {
   if (!path) return "";
-  if (/^https?:\/\//.test(path)) return path;
+  if (/^(https?:\/\/|data:|blob:)/.test(path)) return path;
   return `${API_URL.replace(/\/api\/?$/, "")}${path.startsWith("/") ? "" : "/"}${path}`;
 };
 
