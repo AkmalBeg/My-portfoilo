@@ -45,10 +45,8 @@ const downloadResume = () => {
                     --------------------------------------------------- */
                     .hero-bg {
                         background-color: #000;
-                        background-image: url("https://assets.prebuiltui.com/components/hero-section/hero-background-image.png");
-                        background-size:cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
+                       
+                       
                     }
 
                     .rainbow::before {

@@ -66,7 +66,7 @@ export default function Example() {
           transform: translateX(5px);
         }
       `}</style>
-        <section className="px-4 md:px-16 lg:px-24 xl:px-32 w-full pt-16 pb-5 bg-black text-white flex flex-col items-center bg-[url('https://assets.prebuiltui.com/components/hero-section/hero-background-image.png')] bg-cover bg-center bg-no-repeat">
+        <section className="px-4 md:px-16 lg:px-24 xl:px-32 w-full pt-16 pb-5 bg-black text-white flex flex-col items-center ">
             <p className="text-center font-medium text-black px-10 py-2 rounded-full bg-[#A6FF5D] border border-[#A6FF5D-800] w-max mx-auto">Contact</p>
             <h3 className="text-3xl font-semibold text-white text-center mx-auto mt-4">Reach out to us</h3>
             <p className="text-slate-300 text-center mt-2 max-w-md mx-auto">Ready to grow your brand? Let’s connect and build something exceptional together.</p>

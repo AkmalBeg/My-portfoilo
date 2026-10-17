@@ -54,7 +54,7 @@ const ProjectCard = ({
         <img
           src={image || undefined}
           alt={title}
-          className="w-24 h-24 rounded-full shadow-md my-4 border-2 border-[#A6FF5D]/40 object-cover"
+          className="w-24 h-24 shrink-0 rounded-full shadow-md my-4 border-2 border-[#A6FF5D]/40 object-cover"
         />
         <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
         <p className="text-sm text-[#A6FF5D] font-medium mb-4">{role}</p>

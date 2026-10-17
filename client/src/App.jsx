@@ -3,13 +3,18 @@ import { Routes, Route } from 'react-router-dom'
 import Login from './pages/Login.jsx'
 import Home from './pages/Home.jsx'
 import { AdminProvider } from './AdminContext.jsx'
+import Background from './Background.jsx'
 
 const App = () => (
   <AdminProvider>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <Background />
+
+    <div className="relative z-10">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </div>
   </AdminProvider>
 )
 

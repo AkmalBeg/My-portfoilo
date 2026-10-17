@@ -91,7 +91,7 @@ export default function Example() {
         }
       `}</style>
 
-      <div className='bg-black text-white flex flex-col items-center bg-[url("https://assets.prebuiltui.com/components/hero-section/hero-background-image.png")] bg-cover bg-center bg-no-repeat pt-12 sm:pt-16 pb-10 px-4 overflow-x-hidden'>
+      <div className='bg-black text-white flex flex-col items-center   pt-12 sm:pt-16 pb-10 px-4 overflow-x-hidden'>
         <h1 className="text-4xl sm:text-5xl font-semibold text-center mx-auto mb-5">About me</h1>
 
         {isAdmin && (

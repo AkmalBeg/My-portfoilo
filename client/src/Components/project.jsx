@@ -140,7 +140,7 @@ const Project = () => {
   }, []);
 
   return (
-    <div className='bg-black text-white flex flex-col items-center bg-[url("https://assets.prebuiltui.com/components/hero-section/hero-background-image.png")] bg-cover bg-center bg-no-repeat pt-16 pb-47 px-4 overflow-hidden'>
+    <div className='bg-black text-white flex flex-col items-center pt-16 pb-47 px-4 overflow-hidden'>
 
       <style>{`
         @keyframes fadeSlideUp {

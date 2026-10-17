@@ -43,23 +43,23 @@ export default function Example() {
   const goTo = (p) => setPage(Math.min(Math.max(p, 1), totalPages));
 
   // After changing page, bring the top of this section back into view
-  // (so on a phone you don't stay stuck at the bottom of the page)
   useEffect(() => {
     if (firstRender.current) { firstRender.current = false; return; }
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [currentPage]);
 
   return (
+    // No "relative"/"isolate" here on purpose: a positioned wrapper would paint on top of the Contact section
     <div
       ref={sectionRef}
-      className='relative isolate w-full max-w-full overflow-hidden scroll-mt-16 bg-black text-white flex flex-col items-center bg-[url("https://assets.prebuiltui.com/components/hero-section/hero-background-image.png")] bg-cover bg-center bg-no-repeat pt-12 sm:pt-16 pb-32 md:pb-60 px-4'
+      className='w-full max-w-full overflow-hidden scroll-mt-16 bg-black text-white flex flex-col items-center pt-10 sm:pt-16 pb-60 px-4'
     >
-      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">Skills</h1>
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4 sm:mb-8">Skills</h1>
 
       {isAdmin && (
         <button
           onClick={() => setModal({ skill: null })}
-          className="mb-6 px-5 py-2 rounded-full bg-[#A6FF5D] text-gray-800 text-sm font-medium"
+          className="mb-4 sm:mb-6 px-5 py-2 rounded-full bg-[#A6FF5D] text-gray-800 text-sm font-medium"
         >
           + Add skill
         </button>
@@ -88,7 +88,7 @@ export default function Example() {
 
       {/* Page controls: only shown when there is more than one page */}
       {totalPages > 1 && (
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-8 sm:mt-10 max-w-full">
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-5 sm:mt-10 max-w-full">
           <button
             className={`${pageBtn} ${pageBtnIdle}`}
             onClick={() => goTo(currentPage - 1)}
