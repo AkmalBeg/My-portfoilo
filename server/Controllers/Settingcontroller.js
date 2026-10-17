@@ -148,6 +148,7 @@ export const deleteSkill = async (req, res) => {
 // POST /api/upload   (admin) - form-data field name: "image"
 export const uploadImage = (req, res) => {
   if (!req.file) return res.status(400).json({ message: "No image uploaded" });
-  const url = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+
+  const url = `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`;
   return res.status(201).json({ url });
 };
